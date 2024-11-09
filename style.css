@@ -2510,7 +2510,7 @@ input:checked ~ .toggle_sidebar_container {
   .card {
     height: 300px;
     display: inline-block;
-    margin-bottom: 5%;
+    margin-bottom: 12%;
     /* border: 1px solid black; */
   }
 }
