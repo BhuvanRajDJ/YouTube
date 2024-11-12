@@ -610,7 +610,7 @@ input:checked ~ .toggle_sidebar_container {
 
   /* video contents start here */
   .content {
-    height: 86%;
+    height: 72%;;
     margin-left: 1%;
   }
 }
