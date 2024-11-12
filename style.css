@@ -732,7 +732,7 @@ input:checked ~ .toggle_sidebar_container {
     top: 120px;
     left: 64px;
     width: 90%;
-    height: 88%;
+    height: 82%;
     margin: auto;
     position: fixed;
     display: grid;
