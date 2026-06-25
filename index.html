@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube</title>
+    <title>Premium YouTube Clone</title>
+    <!-- Modern Typeface: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
   <div class="container">
@@ -40,37 +44,48 @@
     </div>
 <!-- Search items -->
 <div class="search_items">
-<div class="search-input"> 
-  <div class="input-field">
-    <!-- input field for searching -->
-<input type="text" placeholder="Search">
-</div>
-<!-- search icon logo -->
- <div class="search-button"> 
-<svg xmlns="http://www.w3.org/2000/svg" id="search_button" fill="currentColor" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path clip-rule="evenodd" d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909zM18 11a7 7 0 00-14 0 7 7 0 1014 0z" fill-rule="evenodd"></path></svg>
-</div>
-</div>
-
-<!-- mic -->
- <div class="mic-button">
-<svg xmlns="http://www.w3.org/2000/svg" id="mic" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 1.7 1.34 3.07 3 3.07s3-1.37 3-3.07V6.07C15 4.37 13.66 3 12 3zm6.5 9h-1c0 3.03-2.47 5.5-5.5 5.5S6.5 15.03 6.5 12h-1c0 3.24 2.39 5.93 5.5 6.41V21h2v-2.59c3.11-.48 5.5-3.17 5.5-6.41z"></path></svg>
-</div>
-</div>
-
-<!-- bell, create, acount name -->
-<div class="header_rightsection">
-
-    <!-- create logo -->
-     <div class="createlogo">
-    <svg xmlns="http://www.w3.org/2000/svg" id="create-logo"  viewBox="0 0 24 24"  focusable="false" aria-hidden="true"><path d="M14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2zm3-7H3v12h14v-6.39l4 1.83V8.56l-4 1.83V6m1-1v3.83L22 7v8l-4-1.83V19H2V5h16z"></path></svg>
+  <div class="search-input"> 
+    <div class="input-field">
+      <!-- input field for searching -->
+      <input type="text" placeholder="Search" id="search-input-el">
+      <div class="clear-search-btn" id="clear-search-btn" style="display: none;"><i class="fa-solid fa-xmark"></i></div>
+      <!-- Search suggestions dropdown -->
+      <div class="search-suggestions" id="search-suggestions" style="display: none;">
+        <div class="suggestion-item"><i class="fa-solid fa-magnifying-glass"></i> <span>cartoon wisdom insights</span></div>
+        <div class="suggestion-item"><i class="fa-solid fa-magnifying-glass"></i> <span>cartoon tried to tell us</span></div>
+        <div class="suggestion-item"><i class="fa-solid fa-magnifying-glass"></i> <span>david goggins motivation</span></div>
+        <div class="suggestion-item"><i class="fa-solid fa-magnifying-glass"></i> <span>webdev-6 tutorial</span></div>
+        <div class="suggestion-item"><i class="fa-solid fa-magnifying-glass"></i> <span>fireship code breakdown</span></div>
+      </div>
+    </div>
+    <!-- search icon logo -->
+    <div class="search-button" id="search-button-btn"> 
+      <svg xmlns="http://www.w3.org/2000/svg" id="search_button" fill="currentColor" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path clip-rule="evenodd" d="M16.296 16.996a8 8 0 11.707-.708l3.909 3.91-.707.707-3.909-3.909zM18 11a7 7 0 00-14 0 7 7 0 1014 0z" fill-rule="evenodd"></path></svg>
+    </div>
   </div>
-<!-- Bell logo -->
- <div class="belllogo">
-<svg xmlns="http://www.w3.org/2000/svg" id="bell" fill="currentColor" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path clip-rule="evenodd" d="m13.497 4.898.053.8.694.4C15.596 6.878 16.5 8.334 16.5 10v2.892c0 .997.27 1.975.784 2.83L18.35 17.5H5.649l1.067-1.778c.513-.855.784-1.833.784-2.83V10c0-1.666.904-3.122 2.256-3.902l.694-.4.053-.8c.052-.78.703-1.398 1.497-1.398.794 0 1.445.618 1.497 1.398ZM6 10c0-2.224 1.21-4.165 3.007-5.201C9.11 3.236 10.41 2 12 2c1.59 0 2.89 1.236 2.993 2.799C16.79 5.835 18 7.776 18 10v2.892c0 .725.197 1.436.57 2.058l1.521 2.535c.4.667-.08 1.515-.857 1.515H15c0 .796-.316 1.559-.879 2.121-.562.563-1.325.879-2.121.879s-1.559-.316-2.121-.879C9.316 20.56 9 19.796 9 19H4.766c-.777 0-1.257-.848-.857-1.515L5.43 14.95c.373-.622.57-1.333.57-2.058V10Zm4.5 9c0 .398.158.78.44 1.06.28.282.662.44 1.06.44s.78-.158 1.06-.44c.282-.28.44-.662.44-1.06h-3Z" fill-rule="evenodd"></path></svg>
+
+  <!-- mic -->
+  <div class="mic-button">
+    <svg xmlns="http://www.w3.org/2000/svg" id="mic" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 1.7 1.34 3.07 3 3.07s3-1.37 3-3.07V6.07C15 4.37 13.66 3 12 3zm6.5 9h-1c0 3.03-2.47 5.5-5.5 5.5S6.5 15.03 6.5 12h-1c0 3.24 2.39 5.93 5.5 6.41V21h2v-2.59c3.11-.48 5.5-3.17 5.5-6.41z"></path></svg>
+  </div>
 </div>
-<!-- account logo -->
- <div class="Avatar-logo"></div>
-<img id="img" draggable="false" class="account_logo" alt="Avatar image" height="32" width="32" src="https://yt3.ggpht.com/p5mMuAK9UigbDKeR2JoNB4nDmnS8aP2eVCsw_afZ3tgLK4wvmOMar6qc43FTKdXZcaREb-Rl0A=s88-c-k-c0x00ffffff-no-rj">
+
+<!-- bell, create, theme, account name -->
+<div class="header_rightsection">
+  <!-- create logo -->
+  <div class="createlogo" title="Create">
+    <svg xmlns="http://www.w3.org/2000/svg" id="create-logo" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2zm3-7H3v12h14v-6.39l4 1.83V8.56l-4 1.83V6m1-1v3.83L22 7v8l-4-1.83V19H2V5h16z"></path></svg>
+  </div>
+  <!-- Bell logo -->
+  <div class="belllogo" title="Notifications">
+    <svg xmlns="http://www.w3.org/2000/svg" id="bell" fill="currentColor" viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path clip-rule="evenodd" d="m13.497 4.898.053.8.694.4C15.596 6.878 16.5 8.334 16.5 10v2.892c0 .997.27 1.975.784 2.83L18.35 17.5H5.649l1.067-1.778c.513-.855.784-1.833.784-2.83V10c0-1.666.904-3.122 2.256-3.902l.694-.4.053-.8c.052-.78.703-1.398 1.497-1.398.794 0 1.445.618 1.497 1.398ZM6 10c0-2.224 1.21-4.165 3.007-5.201C9.11 3.236 10.41 2 12 2c1.59 0 2.89 1.236 2.993 2.799C16.79 5.835 18 7.776 18 10v2.892c0 .725.197 1.436.57 2.058l1.521 2.535c.4.667-.08 1.515-.857 1.515H15c0 .796-.316 1.559-.879 2.121-.562.563-1.325.879-2.121.879s-1.559-.316-2.121-.879C9.316 20.56 9 19.796 9 19H4.766c-.777 0-1.257-.848-.857-1.515L5.43 14.95c.373-.622.57-1.333.57-2.058V10Zm4.5 9c0 .398.158.78.44 1.06.28.282.662.44 1.06.44s.78-.158 1.06-.44c.282-.28.44-.662.44-1.06h-3Z" fill-rule="evenodd"></path></svg>
+  </div>
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" id="theme-toggle" title="Toggle Dark/Light Mode">
+    <i class="fa-solid fa-moon"></i>
+  </div>
+  <!-- account logo -->
+  <img id="img" draggable="false" class="account_logo" alt="Avatar image" height="32" width="32" src="https://yt3.ggpht.com/p5mMuAK9UigbDKeR2JoNB4nDmnS8aP2eVCsw_afZ3tgLK4wvmOMar6qc43FTKdXZcaREb-Rl0A=s88-c-k-c0x00ffffff-no-rj">
 </div>
   </div>
 </header>
@@ -640,7 +655,142 @@
   <!-- closing tag for content -->
 </div>
 
-
+<!-- Watch Screen Template (hidden by default) -->
+<div class="watch-screen" id="watch-screen" style="display: none;">
+  <div class="watch-container">
+    <div class="watch-main-content">
+      <!-- Premium Video Player wrapper -->
+      <div class="player-wrapper">
+        <video id="main-video" controls poster="src/image1.jpg">
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="skeleton-loader" id="player-skeleton"></div>
+      </div>
+      
+      <!-- Video Info -->
+      <div class="watch-video-details">
+        <h1 class="watch-video-title" id="watch-title">When Cartoon Tried To Tell Us Something...| Cartoon Wisdom</h1>
+        <div class="watch-video-stats-row">
+          <div class="watch-video-views" id="watch-views-date">333K views • 3 weeks ago</div>
+          
+          <div class="watch-actions-panel">
+            <button class="watch-action-btn" id="like-btn">
+              <i class="fa-regular fa-thumbs-up"></i> <span id="like-count">12K</span>
+            </button>
+            <button class="watch-action-btn" id="dislike-btn">
+              <i class="fa-regular fa-thumbs-down"></i> Dislike
+            </button>
+            <button class="watch-action-btn"><i class="fa-solid fa-share"></i> Share</button>
+            <button class="watch-action-btn"><i class="fa-solid fa-download"></i> Download</button>
+            <button class="watch-action-btn circle-btn"><i class="fa-solid fa-ellipsis"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Channel Panel -->
+      <div class="watch-channel-panel">
+        <div class="channel-info-wrapper">
+          <img class="watch-channel-logo" id="watch-channel-logo" src="src/logo1.jpg" alt="Channel Logo">
+          <div class="channel-text">
+            <h3 class="watch-channel-name" id="watch-channel-name">Inspirophoria</h3>
+            <span class="watch-sub-count" id="sub-count">1.24M subscribers</span>
+          </div>
+          <button class="subscribe-btn" id="subscribe-btn">Subscribe</button>
+        </div>
+      </div>
+      
+      <!-- Description Box -->
+      <div class="watch-description-box" id="description-box">
+        <div class="description-content" id="description-text">
+          <p><strong>#cartoonwisdom #wisdom #nostalgia</strong></p>
+          <p>We explore the hidden meanings, adult jokes, and philosophical wisdom embedded inside the cartoons of our childhood. From classic series to modern animated films, discover how creators managed to tell us deeper truths about life, society, and our psychology.</p>
+          <p>Music in this video: Lofi nostalgic beats. Special thanks to all our patrons. Subscribe for weekly deep dives into cinema wisdom!</p>
+        </div>
+        <button class="desc-toggle-btn" id="desc-toggle-btn">Show more</button>
+      </div>
+      
+      <!-- Comments Section -->
+      <div class="comments-section">
+        <div class="comments-header">
+          <h2 id="comments-count-title">2,415 Comments</h2>
+          <div class="comments-sort"><i class="fa-solid fa-bars-staggered"></i> Sort by</div>
+        </div>
+        
+        <!-- Add Comment form -->
+        <div class="add-comment-form">
+          <img class="user-avatar" src="https://yt3.ggpht.com/p5mMuAK9UigbDKeR2JoNB4nDmnS8aP2eVCsw_afZ3tgLK4wvmOMar6qc43FTKdXZcaREb-Rl0A=s88-c-k-c0x00ffffff-no-rj" alt="Your Avatar">
+          <div class="comment-input-container">
+            <input type="text" placeholder="Add a comment..." id="comment-input">
+            <div class="comment-underline"></div>
+            <div class="comment-form-actions" id="comment-actions" style="display: none;">
+              <button class="comment-btn-cancel" id="comment-cancel">Cancel</button>
+              <button class="comment-btn-submit" id="comment-submit" disabled>Comment</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Comments List -->
+        <div class="comments-list" id="comments-list">
+          <!-- Dynamically filled with premium items -->
+          <div class="comment-item">
+            <img class="comment-user-avatar" src="src/logo2.jpg" alt="User logo">
+            <div class="comment-body">
+              <div class="comment-meta">
+                <span class="comment-username">@retro_philosopher</span>
+                <span class="comment-time">2 days ago</span>
+              </div>
+              <div class="comment-text">This video was incredibly eye-opening. As a kid, we just laugh, but watching this as an adult really makes you appreciate the writers! Beautiful compilation and analysis.</div>
+              <div class="comment-actions">
+                <button class="comment-action-btn"><i class="fa-regular fa-thumbs-up"></i> 528</button>
+                <button class="comment-action-btn"><i class="fa-regular fa-thumbs-down"></i></button>
+                <button class="comment-action-btn reply-btn">Reply</button>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <img class="comment-user-avatar" src="src/logo3.jpg" alt="User logo">
+            <div class="comment-body">
+              <div class="comment-meta">
+                <span class="comment-username">@design_pioneer</span>
+                <span class="comment-time">1 week ago</span>
+              </div>
+              <div class="comment-text">The transitions in the cartoons and how they mirrored our world are just sheer genius. Also, this UI redesign looks exceptionally clean! Excellent work.</div>
+              <div class="comment-actions">
+                <button class="comment-action-btn"><i class="fa-regular fa-thumbs-up"></i> 142</button>
+                <button class="comment-action-btn"><i class="fa-regular fa-thumbs-down"></i></button>
+                <button class="comment-action-btn reply-btn">Reply</button>
+              </div>
+            </div>
+          </div>
+          <div class="comment-item">
+            <img class="comment-user-avatar" src="src/logo4.jpg" alt="User logo">
+            <div class="comment-body">
+              <div class="comment-meta">
+                <span class="comment-username">@lofi_hiker</span>
+                <span class="comment-time">2 weeks ago</span>
+              </div>
+              <div class="comment-text">I've watched this video 3 times already. It gives me so much nostalgia. Thanks for this amazing edit!</div>
+              <div class="comment-actions">
+                <button class="comment-action-btn"><i class="fa-regular fa-thumbs-up"></i> 89</button>
+                <button class="comment-action-btn"><i class="fa-regular fa-thumbs-down"></i></button>
+                <button class="comment-action-btn reply-btn">Reply</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Watch Sidebar (Suggested Videos) -->
+    <div class="watch-sidebar">
+      <h2 class="sidebar-title">Up Next</h2>
+      <div class="suggested-videos-list" id="suggested-videos-list">
+        <!-- Dynamically filled with matching video suggestions -->
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- closing tag for main-content -->
 </div>
@@ -649,5 +799,7 @@
 <!-- closing tag for container -->
 </div>
 
+<!-- Core Dynamic Engine -->
+<script src="app.js"></script>
 </body>
 </html>
